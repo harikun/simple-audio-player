@@ -1,0 +1,277 @@
+html {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.os {
+  background-image: url("https://cdn.pling.com/img/e/b/4/d/a3e3f9695ca4eb598324bfae04aca763d243.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  padding: 2em;
+}
+
+.launcher {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  display: none;
+}
+
+.modal-content {
+  margin: 15% auto;
+  width: 75%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 20px;
+  padding: 7px;
+  background-color: #0f0819;
+}
+
+.header__button,
+.header__space {
+  display: flex;
+  width: 60px;
+}
+
+.header__button button {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 0;
+  outline: 0;
+  padding: 3px;
+  margin-right: 3px;
+  line-height: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__button [aria-label="close"] {
+  background-color: red;
+}
+
+.header__button [aria-label="minimize"] {
+  background-color: yellow;
+}
+
+.header__button [aria-label="maximize"] {
+  background-color: green;
+}
+
+.header__title {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  color: #e2bf54;
+}
+
+.header__title img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #f3f3f5;
+}
+
+.main-player {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+}
+
+.playlist {
+  width: 300px;
+  height: 300px;
+  overflow: auto;
+  background-color: #e7e7e7;
+}
+
+.playlist > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* memberikan style pada item playlist */
+.playlist-item.active {
+  background-color: #f15f5f;
+}
+
+.playlist > ul > li {
+  padding: 0.5em;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.playlist img {
+  height: 50px;
+  width: 50px;
+  margin-right: 0.5em;
+}
+
+.playlist .item-title {
+  font-weight: 700;
+}
+
+.playlist .item-artist {
+  font-size: 11px;
+}
+
+.song {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.song__cover img {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.song__title {
+  text-align: center;
+}
+
+#data-song-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#data-song-artist {
+  font-size: 12px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  width: 92.5%;
+}
+
+.timeline span {
+  position: absolute;
+  top: 10px;
+}
+
+#current-time {
+  left: 0;
+}
+#total-time {
+  right: 0;
+}
+.slider {
+  background-color: #000;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 2px;
+  position: relative;
+  width: 100%;
+}
+
+.progress {
+  background-color: red;
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+.pin {
+  border-radius: 100%;
+  height: 16px;
+  width: 16px;
+  background-color: red;
+  position: absolute;
+  pointer-events: all;
+  right: -6px;
+  top: -6.5px;
+}
+
+.pin:active {
+  transform: scale(1.5);
+}
+
+.controls {
+  margin: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.controls button {
+  border: 0;
+  outline: 0;
+  padding: 3px;
+  margin-right: 3px;
+  line-height: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#control-play,
+#control-pause {
+  color: red;
+  width: 70px;
+  height: 70px;
+}
+
+#control-play > svg,
+#control-pause > svg {
+  width: 40px;
+  height: 40px;
+}
+#control-sleep:focus,
+#control-prev:focus,
+#control-next:focus,
+#control-shuffle:focus {
+  color: rgb(59, 221, 59);
+}
